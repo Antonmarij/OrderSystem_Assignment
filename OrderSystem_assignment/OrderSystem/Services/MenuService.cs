@@ -135,8 +135,10 @@ public class MenuService
 
                 foreach (var product in products)
                 {
-                    Console.WriteLine($"\n{product.Name} - {product.Price}\n{product.Description}");
+                    Console.WriteLine($"\n{product.Name} - {product.Price} SEK\n{product.Description}");
                 }
+
+                Console.WriteLine("\nPress Enter to return to the Main menu!");
             }
             else
             {
@@ -153,6 +155,7 @@ public class MenuService
     {
         try
         {
+            Console.Clear();
             Console.Write("Enter customer ID: ");
             var customerIdInput = Console.ReadLine();
             
@@ -213,7 +216,7 @@ public class MenuService
             //dont have this need to implement ask later.
             await ShowOrdersAsync();
 
-            Console.Write("Enter ID of the order you wish to eidt: ");
+            Console.Write("Enter ID of the order you wish to edit: ");
             var orderIdInput = Console.ReadLine();  
 
             if (int.TryParse(orderIdInput, out int orderId))
